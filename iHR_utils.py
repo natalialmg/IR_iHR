@@ -69,7 +69,12 @@ def optimal_svd(Y):
     return U[:,aux], s_eta[aux], V[aux,:]
 
 def curveExtractor(E, lamb, guess=None):
-
+# Code Based on paper: Antonio Cicone and Hau-Tieng Wu,“How nonlinear-type time-
+#frequency analysis can help in sensing instantaneous heart rate and
+#instantaneous respiratory rate from photoplethysmography in a reliable
+#way,”
+#Frontiers in Physiology
+#, vol. 8, pp. 701, 2017.
     eps = 1e-8
     E = np.abs(np.array(E)).T
     E /=np.sum(E)
